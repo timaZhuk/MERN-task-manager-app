@@ -12,7 +12,7 @@ on:
 # jobs, define a multiple jobs
 jobs:
   build-and-lint:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
