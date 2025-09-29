@@ -2,7 +2,7 @@
 services:
   backend:
     build: ./server
-    container_name: backend2server
+    container_name: backend
     restart: always
     env_file:
       - ./server/.env
@@ -12,10 +12,10 @@ services:
   frontend:
     build:
       context: ./client
-    container_name: frontend2server
+      args:
+        VITE_API_URL: http://56.228.31.42:5000/api
+    container_name: frontend
     restart: always
-    env_file:
-      - ./client/.env
     ports:
       - "5173:5173"
     depends_on:
