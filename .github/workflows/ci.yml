@@ -32,7 +32,7 @@ jobs:
 
       - name: Install frontend dependencies
         working-directory: client
-        run npm ci
+        run: npm ci
 
       - name: Lint frontend
         working-directory: client
@@ -40,6 +40,6 @@ jobs:
 
       - name: Build backend image
         run: docker build -t backend ./server
-      
+
       - name: Build frontend image
         run: docker build -t frontend ./client
